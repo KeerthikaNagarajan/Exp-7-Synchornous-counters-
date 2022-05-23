@@ -1,9 +1,11 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 4 bit up and down counters and validate  functionality.
+### HARDWARE REQUIRED: 
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:  
+Quartus prime
 ### THEORY 
-
 ## UP COUNTER 
 The counter is a digital sequential circuit and here it is a 4 bit counter, which simply means it can count from 0 to 15 and vice versa based upon the direction of counting (up/down). 
 
@@ -46,43 +48,62 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
-
+1. Create module projectname(input ,output) to start the verilog programming.
+2. create a if loop condition to increase the count in counter_up function.
+3. Similarly, create another loop for the down counter.
+4. End the verilog program using keyword endmodule.
+5. Get the timing diagram and RTL realization diagram for respective Counters.
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Keerthika N
+RegisterNumber: 212221230049
 */
 
+## UP COUNTER 
+```
+module UPC(input clk,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge clk or posedge reset)
+begin
+if (reset)
+counter_up<=4'd0;
+else 
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+```
+### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+![out](cdcup.png)
+### TIMING DIGRAMS FOR COUNTER  
+![out](ttcup.png)
+### TRUTH TABLE 
+![out](upc.jpeg)
 
-
-
-
+## DOWN COUNTER 
+```
+module cdow(input clk,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge clk or posedge reset)
+begin
+if (reset)
+counter_down<=4'd0;
+else 
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+```
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
+![out](cdcdow.png)
 ### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
+![out](ttcdow.png)
 ### TRUTH TABLE 
-
-
-
-
+![out](cdow.jpeg)
 
 
 ### RESULTS 
+4 bit up and down counters are implemented and its functionality is validated successfully.
