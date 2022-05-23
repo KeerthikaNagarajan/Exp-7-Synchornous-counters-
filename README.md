@@ -80,6 +80,7 @@ endmodule
 ![out](cdcup.png)
 ### TIMING DIGRAMS FOR COUNTER  
 ![out](ttcup.png)
+![out](uptime2.png)
 ### TRUTH TABLE 
 ![out](upc.jpeg)
 
@@ -102,6 +103,7 @@ endmodule
 ![out](cdcdow.png)
 ### TIMING DIGRAMS FOR COUNTER  
 ![out](ttcdow.png)
+![out](downtime2.png)
 ### TRUTH TABLE 
 ![out](cdow.jpeg)
 
